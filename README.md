@@ -126,7 +126,7 @@ filter @type = "REPORT"
         avg(@duration) as avgDurationMs, max(@duration) as maxDurationMs, max(@maxMemoryUsed / 1000 / 1000) as maxMemoryMB
 ```
 3. **DynamoDB -> Tables -> iot-demo-events -> Monitor**: write usage (the pipeline's load). *Read* usage is only the verification scan after each run, not pipeline load.
-4. Optional Prometheus exporter: `pip install -r requirements-optional.txt`, then add `--prom-port 9100` after `--extra` (Grafana: `docker compose up`).
+
 
 The totals in CloudWatch should match the sum of the `invocations` and `cold_starts` columns of the `summary.csv` files for the same time window.
 
